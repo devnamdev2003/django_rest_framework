@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest API</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0%;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: #dce4ee;
+        }
+
+        .fetch,
+        .delete,
+        .insert {
+            width: 90%;
+            margin: auto;
+            /* border: 1px solid #000; */
+            padding: 2em 0em;
+        }
+
+        .code {
+            overflow-x: scroll;
+            /* border: 1px solid #000; */
+            margin-bottom: 1em;
+            margin-top: .5em;
+            padding: 1em .6em;
+            background: rgb(226, 226, 226);
+        }
+
+        .method {
+            margin-left: 1.7em;
+            /* border: 1px solid #000; */
+            padding-top: .5em;
+        }
+
+        h1 {
+            text-align: center;
+            /* border: 1px solid #000; */
+            padding-top: .7em;
+        }
+
+        h3 {
+            line-height: 1.5em;
+            /* padding-bottom: 1em; */
+        }
+
+        @media (max-width:500px) {
+            h1 {
+                width: 90%;
+                margin: auto;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Free REST API for Fetch, Delete, Insert data</h1>
+        <div class="fetch">
+            <h2>1. Fetch Data</h2>
+
+            <div class="method">
+                <h3>Python Code:</h3>
+                <h3>Fetch all Data:</h3>
+                <div class="code">
+                    <p>import requests</p>
+                    <p>import json</p>
+                    <br>
+                    def get():
+                    <br>
+                    &nbsp&nbsp URL = "http://codersdev.pythonanywhere.com/api/"
+                    <br>
+                    &nbsp&nbsp r = requests.get(URL)
+                    <br>
+                    &nbsp&nbsp data = r.json()
+                    <br>
+                    &nbsp&nbsp for val in data:
+                    <br>
+                    &nbsp&nbsp &nbsp&nbsp print(val)
+                </div>
+                <h3>Fetch Data by id:</h3>
+                <div class="code">
+                    <p>import requests</p>
+                    <p>import json</p>
+                    def get_by_id(id):
+                    <br>
+                    &nbsp&nbsp URL = f"http://codersdev.pythonanywhere.com/api/{id}"
+                    <br>
+                    &nbsp&nbsp r = requests.get(URL)
+                    <br>
+                    &nbsp&nbsp data = r.json()
+                    <br>
+                    &nbsp&nbsp print(data)
+                </div>
+            </div>
+        </div>
+        <div class="insert">
+            <h2>2. Insert Data</h2>
+
+            <div class="method">
+                <h3>Python Code:</h3>
+                <div class="code">
+                    import requests
+                    <br> import json
+                    <br>
+                    <br> def insert():
+                    <br> &nbsp&nbsp URL = "http://codersdev.pythonanywhere.com/api/insert"
+                    <br> data = {
+                    <br> &nbsp&nbsp 'name': 'name',
+                    <br> &nbsp&nbsp 'age': 'age',
+                    <br> &nbsp&nbsp 'roll': 'roll_number',
+                    <br> &nbsp }
+                    <br> json_data = json.dumps(data)
+                    <br> r = requests.post(URL, data=json_data)
+                    <br> data = r.json()
+                    <br> print(data)
+                </div>
+            </div>
+        </div>
+        <div class="delete">
+            <h2>3. Delete Data</h2>
+            <div class="method">
+                <h3>Python Code:</h3>
+                <div class="code">
+                    <p>import requests</p>
+                    <p>import json</p>
+                    <br> def remove(id):
+                    <br> &nbsp&nbsp URL = f"http://codersdev.pythonanywhere.com/api/remove/{id}"
+                    <br> &nbsp&nbsp r = requests.delete(url=URL)
+                    <br> &nbsp&nbsp data = r.json()
+                    <br> &nbsp&nbsp print(data)
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
