@@ -78,7 +78,7 @@
                     <br>
                     def get():
                     <br>
-                    &nbsp&nbsp URL = "http://codersdev.pythonanywhere.com/api/"
+                    &nbsp&nbsp URL = "<a href="http://127.0.0.1:8000/api/">http://127.0.0.1:8000/api/</a>"
                     <br>
                     &nbsp&nbsp r = requests.get(URL)
                     <br>
@@ -94,7 +94,7 @@
                     <p>import json</p>
                     def get_by_id(id):
                     <br>
-                    &nbsp&nbsp URL = f"http://codersdev.pythonanywhere.com/api/{id}"
+                    &nbsp&nbsp URL = f"<a href="http://127.0.0.1:8000/api/insert">http://127.0.0.1:8000/api/insert</a>"
                     <br>
                     &nbsp&nbsp r = requests.get(URL)
                     <br>
@@ -114,7 +114,7 @@
                     <br> import json
                     <br>
                     <br> def insert():
-                    <br> &nbsp&nbsp URL = "http://codersdev.pythonanywhere.com/api/insert"
+                    <br> &nbsp&nbsp URL = "<a href="http://127.0.0.1:8000/api/insert">http://127.0.0.1:8000/api/insert</a>"
                     <br> data = {
                     <br> &nbsp&nbsp 'name': 'name',
                     <br> &nbsp&nbsp 'age': 'age',
@@ -135,7 +135,7 @@
                     <p>import requests</p>
                     <p>import json</p>
                     <br> def remove(id):
-                    <br> &nbsp&nbsp URL = f"http://codersdev.pythonanywhere.com/api/remove/{id}"
+                    <br> &nbsp&nbsp URL = f"<a href="http://127.0.0.1:8000/api/remove/1">http://127.0.0.1:8000/api/remove/{id}</a>"
                     <br> &nbsp&nbsp r = requests.delete(url=URL)
                     <br> &nbsp&nbsp data = r.json()
                     <br> &nbsp&nbsp print(data)
